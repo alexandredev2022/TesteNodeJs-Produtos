@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
+    command: mysqld --sql_mode=""
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: desafio
+      MYSQL_USER: desafio
+      MYSQL_PASSWORD: 123478
+      MYSQL_TCP_PORT: 3307
+    ports:
+    - 3307:3307
+    expose:
+      - 3307
