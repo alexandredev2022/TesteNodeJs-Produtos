@@ -1,16 +1,10 @@
 import mysql from "mysql";
 
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
   port: 3307,
   user: "root",
   database: "desafio",
   password: "root",
 });
 
-connection.connect((Err) => {
-  if (Err) console.log(Err);
-  console.log("connect!")
-});
-
-
-export default connection;
+export default pool;
